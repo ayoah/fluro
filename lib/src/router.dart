@@ -13,6 +13,7 @@ import 'package:fluro/fluro.dart';
 import 'package:fluro/src/common.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 class Router {
   static final appRouter = Router();
