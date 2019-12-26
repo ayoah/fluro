@@ -127,21 +127,12 @@ class Router {
       bool isNativeTransition = (transition == TransitionType.native ||
           transition == TransitionType.nativeModal);
       if (isNativeTransition) {
-        if (Theme.of(buildContext).platform == TargetPlatform.iOS) {
           return CupertinoPageRoute<dynamic>(
               settings: routeSettings,
               fullscreenDialog: transition == TransitionType.nativeModal,
               builder: (BuildContext context) {
                 return handler.handlerFunc(context, parameters);
               });
-        } else {
-          return MaterialPageRoute<dynamic>(
-              settings: routeSettings,
-              fullscreenDialog: transition == TransitionType.nativeModal,
-              builder: (BuildContext context) {
-                return handler.handlerFunc(context, parameters);
-              });
-        }
       } else if (transition == TransitionType.material ||
           transition == TransitionType.materialFullScreenDialog) {
         return MaterialPageRoute<dynamic>(
